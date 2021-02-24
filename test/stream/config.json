@@ -1,0 +1,11 @@
+{
+  "dockerImageBuilder": "ritclizup/rit-go-builder",
+  "inputs": [
+    {
+      "label": "Quanto segundos de stream ?",
+      "name": "rit_input_stream_time",
+      "required": true,
+      "type": "text"
+    }
+  ]
+}
