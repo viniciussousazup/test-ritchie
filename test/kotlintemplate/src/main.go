@@ -4,14 +4,17 @@
 package main
 
 import (
+	"fmt"
 	"formula/pkg/formula"
 	"os"
 )
 
 func main() {
-	input1 := os.Getenv("RIT_INPUT_TEXT")
+	token := os.Getenv("RIT_INPUT_STREAM_TIME")
+
+	fmt.Println("Stream started every 1s a msg is created.")
 
 	formula.Formula{
-		Text:     input1,
-	}.Run(os.Stdout)
+		Token: token,
+	}.Run()
 }
