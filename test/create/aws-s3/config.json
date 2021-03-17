@@ -1,0 +1,20 @@
+{
+  "dockerImageBuilder": "ritclizup/rit-go-builder",
+  "inputs": [
+    {
+      "label": "Type S3 name: ",
+      "name": "BUCKET_NAME",
+      "required": true,
+      "tutorial": "s3 name",
+      "type": "text"
+    },
+    {
+      "label": "output dir: ",
+      "name": "OUTPUT_DIR",
+      "required": false,
+      "default": "-",
+      "tutorial": "output dir path",
+      "type": "text"
+    }
+  ]
+}
