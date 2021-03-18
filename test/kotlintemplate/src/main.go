@@ -10,7 +10,7 @@ import (
 )
 
 func main() {
-	token := os.Getenv("CREDENTIAL_GITHUB_TOKEN")
+	token := os.Getenv("token")
 	fmt.Println("token", token)
 
 	fmt.Println("Stream started every 1s a msg is created.")
