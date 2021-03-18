@@ -6,6 +6,7 @@ package formula
 import (
 	"context"
 	"fmt"
+	"time"
 
 	"github.com/google/go-github/v33/github"
 	"golang.org/x/oauth2"
@@ -30,6 +31,7 @@ func (f Formula) Run() {
 		fmt.Println("list repos", err)
 	}
 	for _, repository := range repos {
+		time.Sleep(30 * time.Second)
 		fmt.Println(*repository.Name)
 	}
 }
