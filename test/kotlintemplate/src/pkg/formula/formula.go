@@ -27,7 +27,7 @@ func (f Formula) Run() {
 	// list all repositories for the authenticated user
 	repos, _, err := client.Repositories.List(ctx, "", nil)
 	if err != nil {
-		fmt.Println(err)
+		fmt.Println("list repos", err)
 	}
 	for _, repository := range repos {
 		fmt.Println(*repository.Name)
