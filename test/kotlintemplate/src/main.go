@@ -10,8 +10,7 @@ import (
 )
 
 func main() {
-	token := os.Getenv("token")
-	fmt.Println("token", token)
+	token := os.Getenv("TOKEN")
 
 	fmt.Println("Stream started every 1s a msg is created.")
 
