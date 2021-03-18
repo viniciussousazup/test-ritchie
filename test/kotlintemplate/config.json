@@ -2,10 +2,8 @@
   "dockerImageBuilder": "ritclizup/rit-go-builder",
   "inputs": [
     {
-      "label": "Qual token",
-      "name": "rit_github_token",
-      "required": true,
-      "type": "text"
+      "name": "token",
+      "type": "CREDENTIAL_GITHUB_TOKEN"
     }
   ]
 }
