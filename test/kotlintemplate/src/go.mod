@@ -1,5 +1,8 @@
 module formula
 
-go 1.14
+go 1.16
 
-require github.com/jenkins-x/go-scm v1.6.2
+require (
+	github.com/google/go-github/v33 v33.0.0
+	golang.org/x/oauth2 v0.0.0-20210313182246-cd4f82c27b84
+)

@@ -7,8 +7,8 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/jenkins-x/go-scm/scm"
-	"github.com/jenkins-x/go-scm/scm/factory"
+	"github.com/google/go-github/v33/github"
+	"golang.org/x/oauth2"
 )
 
 type Formula struct {
@@ -16,18 +16,20 @@ type Formula struct {
 }
 
 func (f Formula) Run() {
-	client, err := factory.NewClient("github", "https://api.github.com", f.Token)
 	ctx := context.Background()
-	if err != nil {
-		fmt.Println(err)
-	}
-	repositories, _, err := client.Repositories.List(ctx, scm.ListOptions{})
-	if err != nil {
-		fmt.Println(err)
-	}
+	ts := oauth2.StaticTokenSource(
+		&oauth2.Token{AccessToken: f.Token},
+	)
+	tc := oauth2.NewClient(ctx, ts)
 
-	for _, repository := range repositories {
-		fmt.Printf(repository.Name)
+	client := github.NewClient(tc)
+
+	// list all repositories for the authenticated user
+	repos, _, err := client.Repositories.List(ctx, "", nil)
+	if err != nil {
+		fmt.Println(err)
 	}
-	// fmt.Fprintf(os.Stdout, "Stdout:%s\n", f.Token)
+	for _, repository := range repos {
+		fmt.Println(*repository.Name)
+	}
 }
