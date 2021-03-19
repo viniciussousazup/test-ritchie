@@ -29,6 +29,14 @@ func (f Formula) Run() {
 	test := 1
 	for ok := true; ok; ok = test < 7 {
 		fmt.Printf("STEP %d \n", test)
+		fmt.Printf("Saidinha da formulazinha%d \n", test)
+		fmt.Printf("Saidinha da formulazinha%d \n", test)
+		fmt.Printf("Saidinha da formulazinha%d \n", test)
+		fmt.Printf("Saidinha da formulazinha%d \n", test)
+		fmt.Printf("Saidinha da formulazinha%d \n", test)
+		fmt.Printf("Saidinha da formulazinha%d \n", test)
+		fmt.Printf("Saidinha da formulazinha%d \n", test)
+		fmt.Printf("Saidinha da formulazinha%d \n", test)
 		time.Sleep(5 * time.Second)
 		test++
 	}
