@@ -1,0 +1,13 @@
+{
+  "dockerImageBuilder": "ritclizup/rit-go-builder",
+  "inputs": [
+    {
+      "label": "output dir: ",
+      "name": "OUTPUT_DIR",
+      "required": false,
+      "default": "-",
+      "tutorial": "output dir path",
+      "type": "text"
+    }
+  ]
+}
